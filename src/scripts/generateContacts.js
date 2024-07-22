@@ -9,7 +9,8 @@ const generateContacts = async (number) => {
         for (let i = 0; i < number; i++) {
             contacts.push(createFakeContact());
         }
-        await fs.writeFile(PATH_DB, JSON.stringify(contacts));
+        await fs.writeFile(PATH_DB, JSON.stringify(contacts, null, 2));
+        console.log("New Contacts added");
     } catch (error) {
         console.log(error);
     }
